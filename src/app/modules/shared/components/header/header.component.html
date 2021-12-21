@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">PS Start</a>
+        </div>
+        <ul class="nav navbar-nav ">
+            <li *ngFor="let route of appRouteList;">
+                <a [routerLink]="route.path" routerLinkActive="router-link-active">{{ route.header }}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

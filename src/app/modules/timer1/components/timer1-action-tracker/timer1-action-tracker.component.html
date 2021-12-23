@@ -1,0 +1,9 @@
+<ul class="list-items">
+    <ng-container *ngIf="timerHistory.length;">
+        <li class="list-item" *ngFor="let history of timerHistory;">
+            <span class="chip color-light text-xs font-weight-bold" [ngClass]="{'pause': history.action.includes('pause')}">{{history.action | uppercase }}</span>
+            <span class="track-time pl-1 color-dark text-sm">from {{history.time}}</span>
+        </li>
+    </ng-container>
+    <li *ngIf="!timerHistory.length">No Data Found</li>
+</ul>

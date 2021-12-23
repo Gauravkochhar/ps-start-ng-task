@@ -1,0 +1,41 @@
+<div class="mission-wrapper position-relative">
+    <div class="position-absolute rating d-inline-flex p-1 color-light px-2 py-1 align-items-center">
+        <i class="material-icons mr-1 text-sm ">star</i>
+        <span class="text-sm">4</span>
+    </div>
+    <div class="mission-thumbnail">
+        <!-- Mission Image -->
+        <img class="img-responsive" draggable="false" [src]="productInfo?.links?.mission_patch_small" alt="mission-image">
+    </div>
+    <div class="mission-detail">
+        <h4 class="mission-title">{{ productInfo?.mission_name || 'N.A'}}</h4>
+        <ul class="list-item">
+            <li class="mb-1">
+                <span class="text-base color-dark fw-500">1200</span>
+                <s class="text-sm text-muted mx-1">2900</s>
+                <span class="text-sm fw-500 color-success">56% off</span>
+            </li>
+            <!-- Mission Id's -->
+            <li class="list-items" [ngClass]="{'mission-available': (productInfo?.mission_id && (productInfo?.mission_id.length > 1))}">
+                <label>Mission Ids</label>
+                <!-- For Single Mission Id -->
+                <p *ngIf="!(productInfo?.mission_id && productInfo?.mission_id.length) || 
+				(productInfo?.mission_id && (productInfo?.mission_id.length == 1))">
+                    {{ productInfo | dataFromPath: 'mission_id[0]' }}
+                </p>
+                <!-- For Multiple Mission Id -->
+                <ul class="sub-list-item" *ngIf="(productInfo?.mission_id && productInfo?.mission_id.length > 1)">
+                    <li class="sub-list-items" *ngFor="let mission of productInfo?.mission_id">
+                        {{ mission }}
+                    </li>
+                </ul>
+            </li>
+            <!-- Launch Year -->
+            <li class="list-items">
+                <label>Launch Year</label>
+                <p>{{(productInfo?.launch_year+ '') || 'N.A' | titlecase }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End of Mission Card -->

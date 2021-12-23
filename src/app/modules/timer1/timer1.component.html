@@ -1,1 +1,27 @@
-<p>timer1 works!</p>
+<div class="container timer-container">
+    <div class="row">
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100 timer-card--count">
+                <app-timer1-count-down #countDown [(timerHistory)]="timerHistory" (onResetTimer)="setInitialState($event)"></app-timer1-count-down>
+            </div>
+        </div>
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100">
+                <h4 class="heading position-relative text-xl font-weight-bold color-dark pb-3">Timer</h4>
+                <app-timer1-control-panel #controlPanel (onTimerStart)="onTimerStart($event)" (onTimerPause)="onTimerPause($event)" (onResetTimer)="onResetTimer($event)"></app-timer1-control-panel>
+            </div>
+        </div>
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100">
+                <h4 class="heading position-relative text-xl font-weight-bold color-dark pb-3">Timer History</h4>
+                <app-timer1-action-tracker #actionTracker [timerHistory]="timerHistory"></app-timer1-action-tracker>
+            </div>
+        </div>
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100">
+                <h4 class="heading position-relative text-xl font-weight-bold color-dark pb-3">Analytics</h4>
+                <app-timer1-action-counter #actionCounter [timerHistory]="timerHistory"></app-timer1-action-counter>
+            </div>
+        </div>
+    </div>
+</div>

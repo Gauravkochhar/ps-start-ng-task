@@ -1,0 +1,11 @@
+@import '../../../../../variable';
+@import '../../../../../common';
+@import '../../../../../mixins';
+input {
+    &:read-only {
+        background: $disable-bg;
+        &:focus {
+            outline: none;
+        }
+    }
+}

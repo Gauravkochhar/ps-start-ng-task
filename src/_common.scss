@@ -1,0 +1,9 @@
+.horizontal-center {
+    display: flex;
+    justify-content: center;
+}
+
+.center-align {
+    @extend .horizontal-center;
+    align-items: center;
+}

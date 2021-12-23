@@ -1,1 +1,50 @@
-<p>product works!</p>
+<!-- <div class="col-md-12 fetch-data">
+    <img src="https://static.umang.gov.in/cdn/landing/icons/fetch.png" alt="fetching-data"> Data Fetching...
+</div> -->
+<div class="container product-container">
+    <div class="row">
+        <div class="col-md-12 product-col">
+            <div class="listing-header">
+                <h4>Result found: {{ (productList$ | async)?.length }}</h4>
+                <div class="listing-header-action">
+
+                    <!-- View Mode Section -->
+                    <div class="view-mode mr-3">
+                        <p>View</p>
+                        <div class="list-action-buttons">
+                            <img src="assets/images/Group2.svg" *ngIf="defaultListView" (click)="defaultListView=false" alt="">
+                            <img src="assets/images/Group1.svg" *ngIf="!defaultListView" (click)="defaultListView=true" alt="">
+                        </div>
+                    </div>
+                    <!-- Price filter -->
+                    <div class="dropdown d-flex align-items-center position-relative">
+                        <button class="btn btn-primary dropdown-toggle py-1 px-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Filter
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission-Card-Listing Section Starts -->
+            <cdk-virtual-scroll-viewport itemSize="5" class="cdk-viewport" *ngIf="(productList$ | async)?.length">
+                <div class="row listing-row" [ngClass]="{'list-view': !defaultListView, 'grid-view': defaultListView}">
+                    <div class="col-md-3 listing-col" *cdkVirtualFor="let product of productList$ | async;">
+                        <div class="card listing-card">
+                            <app-product-card [productInfo]="product"></app-product-card>
+                        </div>
+                    </div>
+                </div>
+            </cdk-virtual-scroll-viewport>
+            <!-- && !loaderService.callPendingStatus -->
+            <div class="no-record-found" *ngIf="!(productList$ | async)?.length ">
+                <img src="assets/images/no-data-found.svg" alt="">
+                <p>No Record Found</p>
+            </div>
+        </div>
+    </div>
+</div>

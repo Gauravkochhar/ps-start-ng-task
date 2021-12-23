@@ -1,1 +1,8 @@
-<p>student-marks works!</p>
+<div class="container marks-container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-table [columns]="propertiesHeaderList" [rows]="propertiesData" [activeFilterKeyName]="filterInformation?.filterByKeyName" (sortStatusChange)="centeralRequest(filterMetaData.sorting, $event)">
+            </app-table>
+        </div>
+    </div>
+</div>

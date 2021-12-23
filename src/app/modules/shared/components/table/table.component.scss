@@ -1,0 +1,114 @@
+@import '../../../../../variable';
+@import '../../../../../mixins';
+.table-sticky {
+    max-height: 76vh;
+    min-height: 76vh;
+    overflow-y: auto;
+}
+
+table {
+    width: 1500px;
+    user-select: none;
+    &.table-striped tbody tr:nth-of-type(even) {
+        background: rgb(218 101 81 / 10%);
+    }
+    &.table-striped {
+        tbody {
+            tr:nth-of-type(odd) {
+                background: white;
+            }
+            tr:nth-of-type(even) {
+                background: rgb(218 101 81 / 3%);
+            }
+        }
+    }
+    thead {
+        th {
+            font-size: $regular;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            background: $primary;
+            color: #fff;
+            border-bottom: 1px solid #ccc;
+            transform: translateY(-0.5px);
+            transition: all ease-in-out 0.5s;
+            -moz-transition: all ease-in-out 0.5s;
+            -webkit-transition: all ease-in-out 0.5s;
+            &.filterActive {
+                span {
+                    color: chocolate;
+                }
+            }
+            i {
+                font-size: 18px;
+                vertical-align: middle;
+                cursor: pointer;
+                opacity: 0.5;
+                margin-left: 5px;
+                &.green {
+                    // color: green;
+                    // opacity: 1;
+                    border-radius: 4px;
+                    color: $green;
+                    opacity: 1;
+                    border: 1px solid white;
+                    background: white;
+                }
+                &.red {
+                    // color: red;
+                    // opacity: 1;
+                    border-radius: 4px;
+                    color: $red;
+                    opacity: 1;
+                    border: 1px solid white;
+                    background: white;
+                }
+            }
+            &:hover {
+                i {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    tbody {
+        font-size: $regular;
+    }
+    td {
+        &.no-record-found {
+            background: white;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 25px;
+            color: #333;
+            border: none;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #5372803f;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

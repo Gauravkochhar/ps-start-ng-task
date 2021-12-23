@@ -1,0 +1,95 @@
+@import '../../../../../variable';
+@import '../../../../../mixins';
+li {
+    a {
+        color: $dark-gray;
+        background: transparent;
+        &:hover {
+            color: $light-gray;
+        }
+    }
+}
+
+.main-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: white;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 4%);
+    padding-top: 0;
+    padding-bottom: 0;
+    @include breakpoint(laptopview) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .navbar-brand {
+        color: $primary;
+        font-size: $large;
+    }
+    .navbar-collapse {
+        font-size: $regular;
+        @include breakpoint(laptopview) {
+            overflow-y: auto;
+            display: block;
+            max-height: 0px;
+            transition: max-height 1s ease;
+            &.show {
+                max-height: calc(100vh - 50px);
+                transition: max-height 1s ease;
+            }
+            .dropdown-menu {
+                border: none;
+                padding: 0px;
+                >a {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+    .navbar-right {
+        margin-right: -30px;
+    }
+    border-radius: 0px;
+    .navbar-nav {
+        >li {
+            padding: 0 15px;
+            &:last-child {
+                padding-right: 0;
+            }
+            >a {
+                padding: 20px 0;
+                position: relative;
+                @include breakpoint(tablet) {
+                    padding: 10px 0;
+                }
+                &::before {
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    position: absolute;
+                    content: '';
+                    width: 0%;
+                    height: 3px;
+                    border-radius: 5px 5px 0 0;
+                    background-color: $primary;
+                    @include transition(0.2s, ease);
+                    opacity: 0;
+                    margin: auto;
+                    @include breakpoint(tablet) {
+                        height: 0px;
+                    }
+                }
+                &:hover {
+                    color: $primary;
+                    &::before {
+                        width: 100%;
+                        opacity: 1;
+                        @include transition(0.2s, ease);
+                    }
+                }
+            }
+        }
+    }
+}

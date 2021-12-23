@@ -1,7 +1,8 @@
 export const APP_ROUTES = {
-    defaultPage: 'feature/banner-page',
+    defaultPage: 'feature/student-marks',
     bannerPage: 'banner-page',
     productListing: 'product-listing',
+    timer: 'timer',
     timer1: 'timer1',
     timer2: 'timer2',
     studentMarks: 'student-marks',
@@ -9,6 +10,10 @@ export const APP_ROUTES = {
 };
 
 export const APP_ROUTES_LIST = [
+    {
+        path: APP_ROUTES.studentMarks,
+        header: 'Marks Table'
+    },
     {
         path: APP_ROUTES.bannerPage,
         header: 'Banner'
@@ -18,16 +23,17 @@ export const APP_ROUTES_LIST = [
         header: 'Products'
     },
     {
-        path: APP_ROUTES.timer1,
-        header: 'Timer App'
-    },
-    {
-        path: APP_ROUTES.timer2,
-        header: 'Timer App'
-    },
-    {
-        path: APP_ROUTES.studentMarks,
-        header: 'Marks Table'
+        header: 'Timer',
+        childRoutes: [
+            {
+                path: APP_ROUTES.timer1,
+                header: 'Input/Output Decorator' 
+            },
+            {
+                path: APP_ROUTES.timer2,
+                header: 'Subject/ Observable'
+            }
+        ]        
     },
     {
         path: APP_ROUTES.dynamicScroller,

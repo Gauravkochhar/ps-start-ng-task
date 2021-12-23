@@ -1,0 +1,253 @@
+@import '../../../variable';
+@import '../../../mixins';
+.product-container {
+    margin-top: 30px;
+    @media (max-width: 700px) {
+        margin-top: 15px;
+    }
+}
+
+// ----------------- ** Filter Section Styling Starts (Left Section) ** --------------------- //
+.filter-main-heading {
+    @include display(flex, space-between, center);
+    margin-bottom: 10px;
+    .filter-heading {
+        @include fonts($medium + 2, 1.4, 500);
+        color: $dark;
+        margin-bottom: 0;
+    }
+    .close-filter {
+        display: none;
+        @media (max-width: 700px) {
+            display: inline-block;
+        }
+    }
+}
+
+.filter-col {
+    @media (min-width: 700px) and (max-width: 1024px) {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    @media (max-width: 700px) {
+        width: 200px;
+        padding-left: 0;
+        padding-right: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 9;
+        transform: translateX(-100%);
+        @include transition(0.2s, ease-in-out);
+        &.opened {
+            transform: translateX(0);
+        }
+        .filter-card {
+            height: 100%;
+            border-radius: 0;
+        }
+    }
+}
+
+.card {
+    border: none;
+    padding: 10px;
+    @include boxShadow(0, 4px, 8px, 0);
+    @extend .border-radius;
+    &.listing-card {
+        height: 100%;
+    }
+    &.filter-card {
+        padding-right: 0;
+        .filter-wrapper {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            // Sub Filters
+            .filter-sub-heading {
+                border-bottom: 0.1px solid $gray;
+                border-bottom-width: 0.5px;
+                text-align: center;
+                margin-bottom: 5px;
+                user-select: none;
+                h4 {
+                    @include fonts($regular, 1.4, 500);
+                    color: $medium-gray;
+                    margin-bottom: 0px;
+                }
+            }
+            // Style of Filter Chip
+            .list-item {
+                padding: 0;
+                margin: 0;
+                @include display(flex, flex-start, flex-start);
+                flex-wrap: wrap;
+                margin: 0 -5px;
+                li {
+                    width: 50%;
+                    display: inline-flex;
+                    padding: 5px;
+                    span {
+                        @extend .border-radius;
+                        background: lighten($color: $sub-primary, $amount: 60);
+                        width: 100%;
+                        display: block;
+                        padding: 5px;
+                        text-align: center;
+                        cursor: pointer;
+                        @include transition(0.2s, ease-in-out);
+                        &:hover {
+                            background: lighten($color: $sub-primary, $amount: 55);
+                            @include transition(0.2s, ease-in-out);
+                        }
+                        &.active {
+                            background: lighten($color: $sub-primary, $amount: 30);
+                            @include transition(0.2s, ease-in-out);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.custom-scroll {
+    height: calc(100vh - 115px);
+    padding-right: 10px;
+    @media (max-width: 700px) {
+        height: 100vh;
+    }
+}
+
+// -------------------------- ** End Of Filter Section Styling ** -------------------------------- //
+// ----------------- ** Record Found + View Mode Starts (Right Section) ** --------------------------- //
+.mission-list-wrapper {
+    @media (min-width: 700px) and (max-width: 1024px) {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}
+
+.listing-header {
+    @include display(flex, space-between, center);
+    margin-bottom: 30px;
+    @media (max-width: 700px) {
+        margin-bottom: 15px;
+    }
+    h4 {
+        @include fonts($medium, 1.4, 500);
+        margin-bottom: 0;
+    }
+    // Lable for view mode & filter
+    .listing-header-action {
+        @include display(inline-flex, flex-end, center);
+        .view-mode {
+            display: inline-flex;
+            @media (max-width: 700px) {
+                display: none;
+            }
+        }
+        .filter-action {
+            display: none;
+            @media (max-width: 700px) {
+                display: inline-flex;
+            }
+        }
+        p {
+            margin-bottom: 0;
+            @include fonts($regular, 1.4, 500);
+            color: $dark;
+            margin-right: 5px;
+        }
+        // Buttons for view-mode & filter
+        .list-action-buttons {
+            width: 20px;
+            height: 20px;
+            @extend .border-radius;
+            background: $light;
+            border-radius: 5px;
+            @include display(inline-flex, center, center);
+            cursor: pointer;
+            position: relative;
+            .applied-filter {
+                width: 8px;
+                height: 8px;
+                background: $danger;
+                border-radius: 50%;
+                display: inline-block;
+                position: absolute;
+                top: -2px;
+                right: -2px;
+            }
+            img {
+                width: 100%;
+            }
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// ----------------- ** End Of Record Found + View Mode Section ** --------------------------- //
+// ----------------- ** Start of Mission Card Listing Section (Right Section) ** -------------------- //
+.listing-row {
+    margin: 0 -7.5px;
+    .listing-col {
+        padding: 0 7.5px;
+        margin-bottom: 15px;
+        @media (min-width: 700px) and (max-width: 1024px) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+    &.list-view {
+        .listing-col {
+            flex: 0 0 50%;
+            max-width: 50%;
+            @media (min-width: 700px) and (max-width: 1024px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+::ng-deep {
+    .list-view {
+        .listing-col {
+            .listing-card {
+                .mission-wrapper {
+                    display: flex;
+                    .mission-thumbnail {
+                        width: 150px;
+                        height: 150px;
+                        @include display(flex, center, center);
+                    }
+                    .mission-detail {
+                        width: calc(100% - 175px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.no-record-found {
+    height: 300px;
+    @include display(flex, center, center);
+    flex-direction: column;
+    p {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+}
+
+// ----------------- ** Start of Mission Card Listing Section ** -------------------- //
+.dropdown-menu {
+    left: inherit !important;
+    right: 0 !important;
+    transform: translateX(0px) !important;
+    margin-top: 40px;
+}

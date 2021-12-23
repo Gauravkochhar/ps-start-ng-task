@@ -1,7 +1,195 @@
+@import './variable';
+
 /* You can add global styles to this file, and also import other style files */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: $gray-100;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.cdk-viewport {
+    height: calc(100vh - 155px);
+    width: 100%;
+    border-radius: 4px;
+    overflow-x: hidden;
+    word-break: break-word;
+    @media (max-width: 700px) {
+        height: calc(100vh - 125px);
+    }
+}
+
+button,
+button:focus,
+a,
+a:focus {
+    outline: none;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+    background: chocolate;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked~.mat-option-text {
+    color: chocolate;
+}
+
+.color-light {
+    color: $light;
+}
+
+.color-dark {
+    color: $dark;
+}
+
+.color-primary {
+    color: $primary;
+}
+
+.color-success {
+    color: $green;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.text-xs {
+    font-size: $text-xs;
+}
+
+.text-sm {
+    font-size: $text-sm;
+}
+
+.text-base {
+    font-size: $text-base;
+}
+
+.text-lg {
+    font-size: $text-lg;
+}
+
+.text-xl {
+    font-size: $text-xl;
+}
+
+.text-xxl {
+    font-size: 32px;
+}
+
+.text-larger {
+    font-size: $extra-larger;
+}
+
+.rounded-10 {
+    border-radius: 10px;
+}
+
+.primary-color {
+    color: $primary;
+}
+
+.btn {
+    border-color: transparent;
+    &-primary {
+        background-color: $primary;
+        &:hover {
+            background: darken($color: $primary, $amount: 20);
+        }
+        &:disabled {
+            background: $primary;
+            cursor: not-allowed;
+        }
+    }
+    &-bordered {
+        color: $dark;
+        background-color: transparent;
+        border-color: $dark;
+        &:hover {
+            background: none;
+        }
+    }
+    &-reset {
+        color: $dark;
+        background-color: $light;
+        &:hover {
+            background: darken($color: $light, $amount: 5);
+        }
+    }
+}
+
+.btn-wrapper {
+    button {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}
+
+.fetch-data {
+    height: 290px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+        margin-bottom: 15px;
+        width: 50px;
+        animation: rotateWheal 2s linear infinite;
+    }
+}
+
+@keyframes rotateWheal {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

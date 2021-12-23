@@ -1,0 +1,32 @@
+@import '../../../variable';
+@import '../../../common';
+.box-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.box {
+    border: 2px solid $dark-gray;
+}
+
+.outer-box {
+    @extend .center-align;
+    height: 50vh;
+    width: 70vw;
+}
+
+.inner-box {
+    @extend .center-align;
+    height: 90%;
+    width: 98%;
+    overflow: hidden;
+}
+
+.banner-text {
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}

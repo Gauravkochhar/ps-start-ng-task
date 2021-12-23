@@ -1,0 +1,31 @@
+@import '../../../variable';
+@import '../../../mixins';
+@import '../../../common';
+.timer-col {
+    margin-bottom: 30px;
+}
+
+.timer-card {
+    min-height: 200px;
+    border-radius: 5px;
+    // background-color: lighten($color: $primary, $amount: 20);
+    background-color: $gray-200;
+    &--count {
+        font-size: $extra-large;
+        @extend .center-align;
+        background: linear-gradient(to right, $primary, $light-primary);
+    }
+}
+
+.heading {
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        height: 5px;
+        width: 35px;
+        border-radius: 20px;
+        background: $primary;
+        display: block;
+    }
+}

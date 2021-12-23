@@ -1,0 +1,11 @@
+<form [formGroup]="timerForm">
+    <div class="form-group">
+        <label class="text-sm" for="timer-input">Enter Timer Limit</label><br>
+        <input class="form-control w-100" id="timer-input" OnlyNumber="true" type="text" formControlName="timerLimit" [readonly]="!inputEnable" />
+    </div>
+    <div class="btn-wrapper">
+        <button class="btn btn-primary" [disabled]="timerForm.invalid" type="button" *ngIf="startBtnVisible" (click)="onTimerStartRequest()">Start</button>
+        <button class="btn btn-bordered" *ngIf="!startBtnVisible" type="button" (click)="onTimerPauseRequest()">Pause</button>
+        <button class="btn btn-reset" type="button" (click)="onResetRequest()">Reset</button>
+    </div>
+</form>

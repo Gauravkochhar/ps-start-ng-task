@@ -1,1 +1,27 @@
-<p>timer2 works!</p>
+<div class="container timer-container">
+    <div class="row">
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100 timer-card--count">
+                <app-timer2-count-down></app-timer2-count-down>
+            </div>
+        </div>
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100">
+                <h4 class="heading position-relative text-xl font-weight-bold color-dark pb-3">Timer</h4>
+                <app-timer2-control-panel></app-timer2-control-panel>
+            </div>
+        </div>
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100">
+                <h4 class="heading position-relative text-xl font-weight-bold color-dark pb-3">Timer History</h4>
+                <app-timer2-action-tracker></app-timer2-action-tracker>
+            </div>
+        </div>
+        <div class="col-md-6 timer-col">
+            <div class="timer-card px-4 py-4 h-100">
+                <h4 class="heading position-relative text-xl font-weight-bold color-dark pb-3">Analytics</h4>
+                <app-timer2-action-counter></app-timer2-action-counter>
+            </div>
+        </div>
+    </div>
+</div>

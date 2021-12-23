@@ -1,0 +1,74 @@
+@mixin fonts($size, $height, $weight) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+}
+
+@mixin boxShadow($left:left, $right:right, $spread:spread, $blur:blur, $color:rgba(0, 0, 0, 0.05)) {
+    box-shadow: $left $right $spread $blur $color;
+    -webkit-box-shadow: $left $right $spread $blur $color;
+    -moz-box-shadow: $left $right $spread $blur $color;
+}
+
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: $phone) {
+            @content;
+        }
+    }
+    @else if $breakpoint==phone-landscape {
+        @media (max-width: $phone-landscape) {
+            @content;
+        }
+    }
+    @else if $breakpoint==tablet {
+        @media (max-width: $tablet) {
+            @content;
+        }
+    }
+    @else if $breakpoint==laptopview {
+        @media (max-width: $laptopview) {
+            @content;
+        }
+    }
+    @else if $breakpoint==laptop {
+        @media (max-width: $laptop) {
+            @content;
+        }
+    }
+    @else if $breakpoint==dekstop {
+        @media (max-width: $dekstop) {
+            @content;
+        }
+    }
+}
+
+@mixin display($type, $justify, $align) {
+    display: $type;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin lineClamp($line) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: $line;
+}
+
+@mixin transition($time, $animation) {
+    transition: $time all $animation;
+    -moz-transition: $time all $animation;
+    -webkit-transition: $time all $animation;
+}
+
+.border-radius {
+    border-radius: 4px;
+}
+
+.center-aligned {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

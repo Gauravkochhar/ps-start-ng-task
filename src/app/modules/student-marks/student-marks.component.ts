@@ -12,6 +12,8 @@ import { UtilService } from 'src/app/core/services/util.service';
 export class StudentMarksComponent implements OnInit {
 
   public propertiesData: Datum[] = [];
+  public tempPropertiesData : Datum[] = [];
+  public temp1PropertiesData: Datum[] = [];
   public propertiesHeaderList = propertiesHeaderList;
   public readonly filterMetaData = filterMetaData;
   public filterInformation = { searchInput: '', filterByKeyName: '' };
@@ -33,11 +35,30 @@ export class StudentMarksComponent implements OnInit {
       const isResultOk = (this._utilService.get(response, 'body.success') == '1') && (this._utilService.get(response, 'body.message') == 'success');
       if (isResultOk) {
         this.propertiesData = this._utilService.get(response, 'body.data');
+        this.tempPropertiesData = this._utilService.cloneDeep(this._utilService.get(response, 'body.data'));
+        this.temp1PropertiesData = this._utilService.cloneDeep(this._utilService.get(response, 'body.data'));
       }
     });
   }
 
   centeralRequest(operationType: any, operationData: any) {
-
+    if((operationType == this.filterMetaData.sorting) && operationData.activeSortData.length) {
+      console.log('operationData',operationData.activeSortData);
+      const dataFound = operationData.activeSortData.find((elm: any) => elm.keyName == operationData.lastClickedColumn);
+      if(dataFound) {
+        const { keyName, sortStatus } = dataFound;
+        if(sortStatus == 'asc') {
+          this.tempPropertiesData = this.propertiesData.sort((a: any, b: any) => (a[keyName] < b[keyName] ? -1 : 1));
+        } else if(sortStatus == 'desc') {
+          this.tempPropertiesData = this.propertiesData.sort((a: any, b: any) => (a[keyName] > b[keyName] ? -1 : 1));
+        } else {
+          this.tempPropertiesData = this.temp1PropertiesData ;
+        }
+      } else {
+        this.tempPropertiesData = this.temp1PropertiesData ;
+      }
+    } else {
+      this.tempPropertiesData = this.temp1PropertiesData;
+    }
   }
 }

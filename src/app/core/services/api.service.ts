@@ -23,7 +23,8 @@ export class ApiService {
   }
 
   public fetchStudentMarksList() {
-    return this.httpService.getLocalRequest('assets/mocks/student-marks.json');
+    // return this.httpService.getLocalRequest('assets/mocks/student-marks.json');
+    return this.httpService.getLocalRequest('assets/mocks/student-marks-list.json');
   }
 
 }

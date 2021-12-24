@@ -8,6 +8,7 @@ import { UtilService } from 'src/app/core/services/util.service';
 })
 export class TableComponent implements OnInit {
 
+  public lastClickedColumn: any;
   public activeSortData: any[] = [];
   @Input() activeFilterKeyName: any;
   @Input() serialNoVisible = true;
@@ -37,11 +38,12 @@ export class TableComponent implements OnInit {
     } else {
       this.activeSortData.unshift({ keyName: $event.keyName, sortStatus: 'asc' });
     }
-    this.sortStatusChange.emit({ activeSortData: this.activeSortData });
+    this.lastClickedColumn = $event.keyName;
+    this.sortStatusChange.emit({ activeSortData: this.activeSortData, lastClickedColumn: $event.keyName });
   }
 
   isColumnInRespectiveOrder(orderType: any, column: any) {
     const index = this.activeSortData.findIndex((elm: any) => (column.keyName === elm.keyName) && (elm.sortStatus === orderType));
-    return (index > -1) ? true : false;
+    return (index > -1) &&  (this.lastClickedColumn==column.keyName) ? true : false;
   }
 }

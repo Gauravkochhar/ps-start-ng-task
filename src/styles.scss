@@ -1,4 +1,6 @@
 @import './variable';
+@import './mixins';
+@import './common';
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -192,4 +194,14 @@ a:focus {
     to {
         transform: rotate(360deg);
     }
+}
+
+.virtual-div {
+    height: 200px;
+    width: 200px;
+    border: 1px solid $primary;
+    // border-radius: 25px;
+    @extend .center-align;
+    @include boxShadow(0, 4px, 8px, 0);
+    @extend .border-radius;
 }

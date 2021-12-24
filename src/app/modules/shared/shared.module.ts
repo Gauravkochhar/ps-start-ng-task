@@ -8,12 +8,14 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TableComponent } from './components/table/table.component';
 import { OnlyNumber } from 'src/app/core/directives/number-directive';
 import { ActionCounterPipe } from 'src/app/core/pipes/action-counter.pipe';
+import { ShowOnScrollDirective } from 'src/app/core/directives/show-on-scroll.directive';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     DataFromPathPipe,
     ActionCounterPipe,
+    ShowOnScrollDirective,
     TableComponent,
     OnlyNumber
   ],
@@ -30,7 +32,8 @@ import { ActionCounterPipe } from 'src/app/core/pipes/action-counter.pipe';
     ActionCounterPipe,
     ScrollingModule,
     TableComponent,
-    OnlyNumber
+    OnlyNumber,
+    ShowOnScrollDirective
   ]
 })
 export class SharedModule { }

@@ -16,7 +16,7 @@
                     {{route.header}}
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" [routerLink]="childRoute.path" *ngFor="let childRoute of route.childRoutes;" (click)="navbarOpened = false;">{{ childRoute.header}}</a>
+                            <a class="dropdown-item inner-nav-link" [routerLink]="childRoute.path" *ngFor="let childRoute of route.childRoutes;" (click)="navbarOpened = false;">{{ childRoute.header}}</a>
                         </div>
                     </li>
                 </ng-container>

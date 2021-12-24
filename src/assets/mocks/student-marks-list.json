@@ -1,0 +1,175 @@
+{
+    "body": {
+        "success": "1",
+        "message": "success",
+        "data": [{
+                "name": "Gaurav Kochhar",
+                "class": "MCA",
+                "section": "B",
+                "maths_marks": 92,
+                "science_marks": 99,
+                "hindi_marks": 83,
+                "datastructure_marks": 73,
+                "cybersecurity_marks": 83,
+                "database_marks": 73,
+                "practical_marks": 93
+            },
+            {
+                "name": "Arun Kumar",
+                "class": "MCA",
+                "section": "A",
+                "maths_marks": 67,
+                "science_marks": 55,
+                "hindi_marks": 84,
+                "datastructure_marks": 74,
+                "cybersecurity_marks": 84,
+                "database_marks": 74,
+                "practical_marks": 95
+            },
+            {
+                "name": "Rishabh Kataria",
+                "class": "MCA",
+                "section": "C",
+                "maths_marks": 80,
+                "science_marks": 88,
+                "hindi_marks": 36,
+                "datastructure_marks": 59,
+                "cybersecurity_marks": 75,
+                "database_marks": 58,
+                "practical_marks": 25
+            },
+            {
+                "name": "Anshiska Sharma",
+                "class": "MCA",
+                "section": "F",
+                "maths_marks": 55,
+                "science_marks": 66,
+                "hindi_marks": 41,
+                "datastructure_marks": 99,
+                "cybersecurity_marks": 55,
+                "database_marks": 38,
+                "practical_marks": 65
+            },
+            {
+                "name": "Raveen",
+                "class": "MCA",
+                "section": "D",
+                "maths_marks": 88,
+                "science_marks": 77,
+                "hindi_marks": 51,
+                "datastructure_marks": 49,
+                "cybersecurity_marks": 35,
+                "database_marks": 58,
+                "practical_marks": 88
+            },
+            {
+                "name": "Harit Prasad",
+                "class": "MCA",
+                "section": "B",
+                "maths_marks": 46,
+                "science_marks": 68,
+                "hindi_marks": 55,
+                "datastructure_marks": 44,
+                "cybersecurity_marks": 77,
+                "database_marks": 56,
+                "practical_marks": 92
+            },
+            {
+                "name": "Rachit Bhatt",
+                "class": "MCA",
+                "section": "A",
+                "maths_marks": 89,
+                "science_marks": 86,
+                "hindi_marks": 85,
+                "datastructure_marks": 79,
+                "cybersecurity_marks": 76,
+                "database_marks": 55,
+                "practical_marks": 66
+            },
+            {
+                "name": "Shubham Jain",
+                "class": "MCA",
+                "section": "B",
+                "maths_marks": 44,
+                "science_marks": 67,
+                "hindi_marks": 88,
+                "datastructure_marks": 77,
+                "cybersecurity_marks": 44,
+                "database_marks": 55,
+                "practical_marks": 56
+            },
+            {
+                "name": "Naman Jain",
+                "class": "MCA",
+                "section": "C",
+                "maths_marks": 86,
+                "science_marks": 95,
+                "hindi_marks": 65,
+                "datastructure_marks": 67,
+                "cybersecurity_marks": 45,
+                "database_marks": 58,
+                "practical_marks": 88
+            },
+            {
+                "name": "Varun mittal",
+                "class": "MCA",
+                "section": "D",
+                "maths_marks": 77,
+                "science_marks": 44,
+                "hindi_marks": 66,
+                "datastructure_marks": 55,
+                "cybersecurity_marks": 33,
+                "database_marks": 66,
+                "practical_marks": 43
+            },
+            {
+                "name": "Sakshi Chabbra",
+                "class": "MCA",
+                "section": "F",
+                "maths_marks": 99,
+                "science_marks": 44,
+                "hindi_marks": 55,
+                "datastructure_marks": 75,
+                "cybersecurity_marks": 88,
+                "database_marks": 88,
+                "practical_marks": 94
+            },
+            {
+                "name": "Hemant Kumar",
+                "class": "MCA",
+                "section": "A",
+                "maths_marks": 60,
+                "science_marks": 45,
+                "hindi_marks": 84,
+                "datastructure_marks": 75,
+                "cybersecurity_marks": 85,
+                "database_marks": 56,
+                "practical_marks": 45
+            },
+            {
+                "name": "Ritik Sharma",
+                "class": "MCA",
+                "section": "B",
+                "maths_marks": 75,
+                "science_marks": 65,
+                "hindi_marks": 95,
+                "datastructure_marks": 88,
+                "cybersecurity_marks": 55,
+                "database_marks": 88,
+                "practical_marks": 45
+            },
+            {
+                "name": "Gulshan Kumar",
+                "class": "MCA",
+                "section": "C",
+                "maths_marks": 78,
+                "science_marks": 78,
+                "hindi_marks": 56,
+                "datastructure_marks": 88,
+                "cybersecurity_marks": 47,
+                "database_marks": 77,
+                "practical_marks": 56
+            }
+        ]
+    }
+}

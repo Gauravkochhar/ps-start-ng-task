@@ -7,9 +7,8 @@
 
 .timer-card {
     min-height: 200px;
-    border-radius: 5px;
-    // background-color: lighten($color: $primary, $amount: 20);
     background-color: $gray-200;
+    @extend .border-radius;
     &--count {
         font-size: $extra-large;
         @extend .center-align;

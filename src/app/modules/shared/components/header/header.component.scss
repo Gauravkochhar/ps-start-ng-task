@@ -91,5 +91,13 @@ li {
                 }
             }
         }
+        .nav-item {
+            .inner-nav-link {
+                font-size: $regular;
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
     }
 }

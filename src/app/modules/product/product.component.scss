@@ -251,3 +251,21 @@
     transform: translateX(0px) !important;
     margin-top: 40px;
 }
+
+.dropdown-item {
+    cursor: pointer;
+    border-bottom: 1px solid $light;
+    &.selected {
+        background: lighten($color: $primary, $amount: 10);
+    }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: $primary;
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}

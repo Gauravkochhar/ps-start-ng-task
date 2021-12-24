@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DynamicScrollerRoutingModule } from './dynamic-scroller-routing.module';
 import { DynamicScrollerComponent } from './dynamic-scroller.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DynamicScrollerComponent } from './dynamic-scroller.component';
   ],
   imports: [
     CommonModule,
-    DynamicScrollerRoutingModule
+    DynamicScrollerRoutingModule,
+    SharedModule
   ]
 })
 export class DynamicScrollerModule { }

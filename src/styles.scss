@@ -198,10 +198,14 @@ a:focus {
 
 .virtual-div {
     height: 200px;
-    width: 200px;
     border: 1px solid $primary;
-    // border-radius: 25px;
     @extend .center-align;
+    margin-top: 20px;
     @include boxShadow(0, 4px, 8px, 0);
-    @extend .border-radius;
+    .virtual-btn {
+        @extend .btn-primary;
+        background-color: $primary;
+        color: $light;
+        padding: 10px 20px;
+    }
 }

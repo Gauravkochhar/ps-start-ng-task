@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BaseComponent } from './base/base.component';
 import { APP_ROUTES } from './core/contants/routes';
+import { PageNotFoundComponent } from './modules/shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,8 @@ const routes: Routes = [
         loadChildren: () => import('./modules/dynamic-scroller/dynamic-scroller.module').then((m) => m.DynamicScrollerModule)
       }
     ]
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

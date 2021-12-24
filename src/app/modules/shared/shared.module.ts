@@ -9,6 +9,7 @@ import { TableComponent } from './components/table/table.component';
 import { OnlyNumber } from 'src/app/core/directives/number-directive';
 import { ActionCounterPipe } from 'src/app/core/pipes/action-counter.pipe';
 import { ShowOnScrollDirective } from 'src/app/core/directives/show-on-scroll.directive';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ShowOnScrollDirective } from 'src/app/core/directives/show-on-scroll.di
     ActionCounterPipe,
     ShowOnScrollDirective,
     TableComponent,
-    OnlyNumber
+    OnlyNumber,
+    PageNotFoundComponent
   ],
   imports: [
     RouterModule,
@@ -33,7 +35,8 @@ import { ShowOnScrollDirective } from 'src/app/core/directives/show-on-scroll.di
     ScrollingModule,
     TableComponent,
     OnlyNumber,
-    ShowOnScrollDirective
+    ShowOnScrollDirective,
+    PageNotFoundComponent
   ]
 })
 export class SharedModule { }

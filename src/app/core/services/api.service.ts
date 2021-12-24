@@ -19,11 +19,9 @@ export class ApiService {
   */
   public getProductList(params: any) {
     return this.httpService.getRequest(this.productListUrl, params, [], true);
-    // return this.httpService.getLocalRequest('assets/mocks/mission.json');
   }
 
   public fetchStudentMarksList() {
-    // return this.httpService.getLocalRequest('assets/mocks/student-marks.json');
     return this.httpService.getLocalRequest('assets/mocks/student-marks-list.json');
   }
 
